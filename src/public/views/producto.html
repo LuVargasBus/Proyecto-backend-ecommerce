@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto - Tienda de Indumentaria</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/detail.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Tienda de Indumentaria</h1>
+            <a href="../index.html" class="btn-back">Volver al catalogo</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="loadingIndicator" class="loading">
+            <div class="spinner"></div>
+            <p>Cargando informacion del producto...</p>
+        </div>
+
+        <div id="productDetail" class="product-detail hidden">
+            <div class="detail-header">
+                <div class="detail-header-content">
+                    <div class="detail-image-section">
+                        <img id="detailImage" src="" alt="" class="detail-image">
+                    </div>
+                    <div class="detail-info-section">
+                        <h2 class="detail-name">
+                            <span id="detailName"></span>
+                            <span id="detailSpanishName" class="hidden"></span>
+                        </h2>
+                        <p class="detail-id" id="detailId"></p>
+                        <div class="detail-types" id="detailTypes"></div>
+                        <p class="detail-description hidden" id="detailDescription"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-content">
+                <div class="detail-grid">
+                    <section class="detail-card">
+                        <h3>Informacion Basica</h3>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <span class="info-label">Stock:</span>
+                                <span class="info-value" id="infoWeight"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Talles:</span>
+                                <span class="info-value" id="infoHeight"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Precio:</span>
+                                <span class="info-value" id="infoBaseExp"></span>
+                            </div>
+                            <div class="info-item hidden" id="infoHabitatItem">
+                                <span class="info-label">Habitat:</span>
+                                <span class="info-value" id="infoHabitat"></span>
+                            </div>
+                            <div class="info-item hidden" id="infoGrowthRateItem">
+                                <span class="info-label">Tasa de crecimiento:</span>
+                                <span class="info-value" id="infoGrowthRate"></span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="detail-card">
+                        <h3>Caracteristicas</h3>
+                        <div class="abilities-detail" id="abilitiesList"></div>
+                    </section>
+
+                    <section class="detail-card stats-card">
+                        <h3>Resumen</h3>
+                        <div class="stats-container" id="statsContainer"></div>
+                    </section>
+
+                    <section class="detail-card">
+                        <h3>Categoria</h3>
+                        <div class="effectiveness-container" id="effectivenessContainer"></div>
+                    </section>
+
+                    <section class="detail-card moves-card">
+                        <h3>Talles</h3>
+                        <p class="moves-count" id="movesCount"></p>
+                        <div class="moves-list" id="movesList"></div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div id="errorMessage" class="error-message hidden">
+            <p>No se pudo cargar la informacion del producto.</p>
+            <a href="../index.html" class="btn-back">Volver al catalogo</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Datos obtenidos del servicio de productos</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/detail.js"></script>
+    <script src="../scripts/animations.js"></script>
+</body>
+</html>

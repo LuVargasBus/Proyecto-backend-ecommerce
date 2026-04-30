@@ -1,0 +1,200 @@
+[
+  {
+    "name": "Remera",
+    "price": 77,
+    "category": "Superior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "remera",
+    "id": "1"
+  },
+  {
+    "name": "Pantalon",
+    "price": 47,
+    "category": "Inferior",
+    "size": ["S", "M", "L"],
+    "stock": 6,
+    "image": "pantalon",
+    "id": "2"
+  },
+  {
+    "name": "Pantalon",
+    "price": 47,
+    "category": "Inferior",
+    "size": ["S", "M", "L"],
+    "stock": 6,
+    "image": "pantalon",
+    "id": "3"
+  },
+  {
+    "name": "Pantalon",
+    "price": 47,
+    "category": "Inferior",
+    "size": ["S", "M", "L"],
+    "stock": 6,
+    "image": "pantalon",
+    "id": "4"
+  },
+  {
+    "name": "Remera",
+    "price": 77,
+    "category": "Superior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "remera",
+    "id": "5"
+  },
+  {
+    "name": "Remera",
+    "price": 77,
+    "category": "Superior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "remera",
+    "id": "6"
+  },
+  {
+    "name": "Remera",
+    "price": 77,
+    "category": "Superior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "remera",
+    "id": "8"
+  },
+  {
+    "name": "Remera",
+    "price": 77,
+    "category": "Superior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "remera",
+    "id": "7"
+  },
+  {
+    "name": "Buzo",
+    "price": 77,
+    "category": "Superior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "buzo",
+    "id": "9"
+  },
+  {
+    "name": "Buzo",
+    "price": 77,
+    "category": "Superior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "buzo",
+    "id": "10"
+  },
+  {
+    "name": "Buzo",
+    "price": 77,
+    "category": "Superior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "buzo",
+    "id": "11"
+  },
+  {
+    "name": "Short",
+    "price": 77,
+    "category": "Inferior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "short",
+    "id": "12"
+  },
+  {
+    "name": "Short",
+    "price": 77,
+    "category": "Inferior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "short",
+    "id": "13"
+  },
+  {
+    "name": "Short",
+    "price": 77,
+    "category": "Inferior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "short",
+    "id": "14"
+  },
+  {
+    "name": "Short",
+    "price": 77,
+    "category": "Inferior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "short",
+    "id": "15"
+  },
+  {
+    "name": "Camisa",
+    "price": 77,
+    "category": "Superior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "camisa",
+    "id": "16"
+  },
+  {
+    "name": "Camisa",
+    "price": 77,
+    "category": "Superior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "camisa",
+    "id": "17"
+  },
+  {
+    "name": "Camisa",
+    "price": 77,
+    "category": "Superior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "camisa",
+    "id": "18"
+  },
+  {
+    "name": "Camisa",
+    "price": 77,
+    "category": "Superior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "camisa",
+    "id": "19"
+  },
+  {
+    "name": "Campera",
+    "price": 77,
+    "category": "Superior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "campera",
+    "id": "20"
+  },
+  {
+    "name": "Campera",
+    "price": 77,
+    "category": "Superior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "campera",
+    "id": "21"
+  },
+  {
+    "name": "Campera",
+    "price": 77,
+    "category": "Superior",
+    "size": ["S", "M", "L"],
+    "stock": 19,
+    "image": "campera",
+    "id": "22"
+  }
+]
