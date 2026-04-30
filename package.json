@@ -1,0 +1,27 @@
+{
+  "name": "proyecto-backend-ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuVargasBus/Proyecto-backend-ecommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/LuVargasBus/Proyecto-backend-ecommerce/issues"
+  },
+  "homepage": "https://github.com/LuVargasBus/Proyecto-backend-ecommerce#readme",
+  "devDependencies": {
+    "standard": "^17.1.2"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
