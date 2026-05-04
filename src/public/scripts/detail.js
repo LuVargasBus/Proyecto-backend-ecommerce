@@ -1,8 +1,7 @@
 const PRODUCTS_URL = 'https://69f2807fb15130b97352f9ac.mockapi.io/api/products/products';
 
 function getLocalProductsPath() {
-    const inViews = window.location.pathname.includes('/views/');
-    return inViews ? '../data/products.json' : 'data/products.json';
+    return 'data/products.json';
 }
 
 const loading = document.getElementById('loadingIndicator');
@@ -52,8 +51,7 @@ const PRODUCT_IMAGE_FILES = {
 function getImagePath(imageName) {
     const imageKey = String(imageName || '').toLowerCase();
     const imageFile = PRODUCT_IMAGE_FILES[imageKey];
-    const inViews = window.location.pathname.includes('/views/');
-    const imageBasePath = inViews ? '../image/' : 'image/';
+    const imageBasePath = 'image/';
 
     if (imageFile) {
         return `${imageBasePath}${imageFile}`;

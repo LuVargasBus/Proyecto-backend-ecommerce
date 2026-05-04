@@ -18,7 +18,7 @@ app.use('/api/products', productRoutes);
 
 // Ruta raíz → sirve el index.html
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'views', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 export default app;
