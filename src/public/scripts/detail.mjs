@@ -1,9 +1,4 @@
-const PRODUCTS_URL = 'https://69f2807fb15130b97352f9ac.mockapi.io/api/products/products';
-
-function getLocalProductsPath() {
-    const inViews = window.location.pathname.includes('/views/');
-    return inViews ? '../data/products.json' : 'data/products.json';
-}
+const PRODUCTS_URL = '/api/productos';
 
 const loading = document.getElementById('loadingIndicator');
 const detail = document.getElementById('productDetail');
@@ -51,10 +46,16 @@ const PRODUCT_IMAGE_FILES = {
 
 function getImagePath(imageName) {
     const imageKey = String(imageName || '').toLowerCase();
-    const imageFile = PRODUCT_IMAGE_FILES[imageKey];
     const inViews = window.location.pathname.includes('/views/');
     const imageBasePath = inViews ? '../image/' : 'image/';
 
+    // Imágenes subidas con multer tienen extensión (ej: xY3kP9q.webp)
+    if (imageKey.includes('.')) {
+        return `${imageBasePath}uploads/${imageKey}`;
+    }
+
+    // Imágenes originales del seed (clave sin extensión)
+    const imageFile = PRODUCT_IMAGE_FILES[imageKey];
     if (imageFile) {
         return `${imageBasePath}${imageFile}`;
     }
@@ -66,19 +67,10 @@ function capitalizar(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-async function obtenerProductos() {
-    try {
-        const response = await fetch(PRODUCTS_URL);
-        if (!response.ok) throw new Error('No se pudo cargar el catalogo');
-        return await response.json();
-    } catch (err) {
-        console.warn('Fallo API remota, usando catalogo local.', err);
-        const localResponse = await fetch(getLocalProductsPath());
-        if (!localResponse.ok) {
-            throw new Error('No se pudo cargar el catalogo local');
-        }
-        return await localResponse.json();
-    }
+async function obtenerProducto(id) {
+    const response = await fetch(`${PRODUCTS_URL}/${id}`);
+    if (!response.ok) throw new Error('Producto no encontrado');
+    return await response.json();
 }
 
 function actualizarHeader(producto, color) {
@@ -204,11 +196,7 @@ async function cargarProducto() {
     }
     
     try {
-        const productos = await obtenerProductos();
-        const producto = productos.find(item => item.id === productoId);
-        if (!producto) {
-            throw new Error('Producto no encontrado');
-        }
+        const producto = await obtenerProducto(productoId);
         mostrarDetalle(producto);
     } catch (err) {
         console.error(err);
