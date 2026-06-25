@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Indumentaria - Catalogo</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Tienda de Indumentaria</h1>
+            <p class="subtitle">Busca productos por nombre o categoria</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Sección de búsqueda -->
+        <section class="search-section">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="productSearch" 
+                    placeholder="Busca un producto (ej: remera, buzo, superior)"
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="btn-search">Buscar</button>
+            </div>
+            <div id="loadingIndicator" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Buscando productos...</p>
+            </div>
+        </section>
+
+        <!-- Contenedor para mostrar resultados -->
+        <section id="resultsSection" class="results-section hidden">
+            <h2>Resultados de la búsqueda</h2>
+            <div id="productCards" class="product-cards"></div>
+        </section>
+
+        <!-- Mensaje de error -->
+        <section id="errorMessage" class="error-message hidden">
+            <p>No se encontraron productos. Verifica el nombre e intenta otra vez.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Datos obtenidos del servicio de productos</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../scripts/script.mjs"></script>
+    <script src="../scripts/animations.mjs"></script>
+</body>
+</html>
+
