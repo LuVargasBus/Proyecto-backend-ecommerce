@@ -1,5 +1,7 @@
 const PRODUCTS_URL = '/api/productos';
 
+const logoutBtn = document.getElementById('logoutBtn');
+
 const form = document.getElementById('productForm');
 const formTitle = document.getElementById('formTitle');
 const formMessage = document.getElementById('formMessage');
@@ -212,4 +214,21 @@ form.addEventListener('submit', async (event) => {
     }
 });
 
-window.addEventListener('DOMContentLoaded', refrescarListado);
+async function verificarSesion() {
+    const response = await fetch('/api/usuarios/perfil');
+    if (response.status === 401) {
+        window.location.href = '/login';
+        return false;
+    }
+    return true;
+}
+
+logoutBtn.addEventListener('click', async () => {
+    await fetch('/api/usuarios/logout', { method: 'POST' });
+    window.location.href = '/login';
+});
+
+window.addEventListener('DOMContentLoaded', async () => {
+    const sesionValida = await verificarSesion();
+    if (sesionValida) await refrescarListado();
+});

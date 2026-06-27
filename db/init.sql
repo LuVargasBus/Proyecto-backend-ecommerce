@@ -38,3 +38,16 @@ INSERT INTO productos (id, name, price, category, size, stock, image) VALUES
 -- Como insertamos los IDs a mano, hay que adelantar la secuencia
 -- para que el próximo INSERT (sin id) continúe desde 23
 SELECT setval('productos_id_seq', (SELECT MAX(id) FROM productos));
+
+CREATE TABLE IF NOT EXISTS usuarios (
+    id            SERIAL PRIMARY KEY,
+    nombre        VARCHAR(100) NOT NULL,
+    email         VARCHAR(150) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    rol           VARCHAR(20) NOT NULL DEFAULT 'cliente',
+    creado_en     TIMESTAMP NOT NULL DEFAULT now()
+);
+
+-- Usuario administrador de prueba: email admin@tienda.com / clave admin123
+INSERT INTO usuarios (nombre, email, password_hash, rol) VALUES
+('Administrador', 'admin@tienda.com', '$2b$10$iIxvpk/Kx1ZSMESZGL6xse/12sl1hdXA3/pvWvoj5Coyo4C27skHy', 'administrador');
