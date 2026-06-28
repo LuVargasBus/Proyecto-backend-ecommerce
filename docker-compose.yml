@@ -24,11 +24,15 @@ services:
       - "3000:3000"
     environment:
       PUERTO: 3000
+      NODE_ENV: development
       BD_HOST: db
       BD_PORT: 5432
       BD_USER: root
       BD_PASS: pass
       BD_BD: tienda
+      JWT_SECRET: clave_secreta_de_firma_tp4
+      JWT_EXPIRES_IN: 1h
+      CORS_ORIGINS: ""
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules

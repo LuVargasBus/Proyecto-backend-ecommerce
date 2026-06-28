@@ -45,17 +45,19 @@ const PRODUCT_IMAGE_FILES = {
 };
 
 function getImagePath(imageName) {
-    const imageKey = String(imageName || '').toLowerCase();
+    const imageValue = String(imageName || '');
     const inViews = window.location.pathname.includes('/views/');
     const imageBasePath = inViews ? '../image/' : 'image/';
 
-    // Imágenes subidas con multer tienen extensión (ej: xY3kP9q.webp)
-    if (imageKey.includes('.')) {
-        return `${imageBasePath}uploads/${imageKey}`;
+    // Imágenes subidas con multer tienen extensión (ej: KisSE0UeHODWZdgd49FQp.jpg).
+    // Se respeta el nombre tal cual lo generó nanoid: en Linux el filesystem
+    // es case-sensitive, así que forzar minúsculas rompía la búsqueda del archivo.
+    if (imageValue.includes('.')) {
+        return `${imageBasePath}uploads/${imageValue}`;
     }
 
-    // Imágenes originales del seed (clave sin extensión)
-    const imageFile = PRODUCT_IMAGE_FILES[imageKey];
+    // Imágenes originales del seed (clave sin extensión, siempre en minúsculas)
+    const imageFile = PRODUCT_IMAGE_FILES[imageValue.toLowerCase()];
     if (imageFile) {
         return `${imageBasePath}${imageFile}`;
     }

@@ -7,6 +7,8 @@ import {
     actualizarProductoController,
     eliminarProductoController
 } from './controlador.productos.mjs'
+import { verificarAcceso } from '../usuarios/middleware/verificarAcceso.mjs'
+import { verificarRol } from '../usuarios/middleware/verificarRol.mjs'
 
 const router = Router()
 
@@ -17,17 +19,19 @@ const subirImagenProducto = (req, res, next) => {
     })
 }
 
-// Lecturas
+const soloAdministrador = [verificarAcceso, verificarRol('administrador')]
+
+// Lecturas (públicas, consumidas también por el storefront)
 router.get('/', listarProductos)
 router.get('/:id', obtenerProducto)
 
 // Alta
-router.post('/', subirImagenProducto, crearProductoController)
+router.post('/', soloAdministrador, subirImagenProducto, crearProductoController)
 
 // Modificación
-router.put('/:id', subirImagenProducto, actualizarProductoController)
+router.put('/:id', soloAdministrador, subirImagenProducto, actualizarProductoController)
 
 // Baja
-router.delete('/:id', eliminarProductoController)
+router.delete('/:id', soloAdministrador, eliminarProductoController)
 
 export default router
